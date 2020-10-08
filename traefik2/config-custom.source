@@ -1,3 +1,7 @@
 export MYPATH=$(pwd)
 export STACKNAME=$(basename $(pwd))
 export STACKPATH=../$BASESTACKPATH/$STACKNAME
+
+############################################
+## export any other customize variable below
+############################################
