@@ -1,6 +1,15 @@
 #!/bin/bash
 source config.source
 
+if [[ $TRAEFIKDOMAIN == "" ]];
+then
+        echo "**** TRAEFIKDOMAIN in config.source not set yet."
+	    echo "**** Please setup config.source first"
+	exit 1 
+else
+        echo "Domain is at $TRAEFIKDOMAIN"
+fi
+
 if [ -z "$1" ]
 then
     # Run all the module listed in MODULELIST
