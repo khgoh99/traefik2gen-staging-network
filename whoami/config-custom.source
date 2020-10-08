@@ -5,3 +5,8 @@ export STACKPATH=../$BASESTACKPATH/$STACKNAME
 ############################################
 ## export any other customize variable below
 ############################################
+
+export CREATE_PATH_LIST=
+export CREATE_NETWORK_LIST=
+#file list will be in filename,mode separated by space
+export CREATE_FILE_LIST=
