@@ -1,29 +1,11 @@
 version: "3.3"
 
 volumes:
-  setting:
+  data:
     driver_opts:
        type: none
        o: bind
-       device: "${DATAPATH}/$STACKNAME/setting"
+       device: "${PGADMIN_DATA}"
 #      type: nfs
 #      o: "nfsvers=4,addr=nfs1.easypro,rw"
-#      device: ":/${TRAEFIKDOMAIN}/traefik/setting"
-
-  config:
-    driver_opts:
-       type: none
-       o: bind
-       device: "${MYPATH}/config"
-#      type: nfs
-#      o: "nfsvers=4,addr=nfs1.easypro,rw"
-#      device: ":/${TRAEFIKDOMAIN}/dockerscript/traefik2nfs/base/config"
-    
-  logs:
-    driver_opts:
-       type: none
-       o: bind
-       device: "${DATAPATH}/$STACKNAME/logs"
-#      type: nfs
-#      o: "nfsvers=4,addr=nfs1.easypro,rw"
-#      device: ":/${TRAEFIKDOMAIN}/traefik/config"
+#      device: ":/easypro.easyiot.link/pgadmin4/data"
