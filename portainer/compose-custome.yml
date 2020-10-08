@@ -6,5 +6,5 @@ volumes:
        device: "${DATAPATH}/${STACKNAME}/data"
 #      type: nfs
 #      o: "nfsvers=4,addr=nfs1.easypro,rw"
-#      device: ":/${TRAEFIKDOMAIN}/traefik/setting"
+#      device: ":/${TRAEFIKDOMAIN}/${STACKNAME}/data"
 
