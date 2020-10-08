@@ -1,2 +1,5 @@
 #!/bin/bash
-(cd traefik2 ;bash firsttime.sh)
+for module in $MODULELIST
+do
+    (cd $module ;bash firsttime.sh)
+done
