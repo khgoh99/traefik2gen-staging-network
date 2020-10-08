@@ -1,5 +1,6 @@
 #!/bin/bash 
 source ../config.source
+source config-custom.source
 
 export STACKNAME="traefik2"
 
