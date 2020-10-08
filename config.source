@@ -18,3 +18,4 @@ export SYSTEMROOT=/storage/root
 #Hash Password
 export HASHED_PASSWORD=$(openssl passwd -apr1 $PASSWORD)
 export DATAPATH=$SYSTEMROOT/$TRAEFIKDOMAIN
+export STACKPATH=../../traefik2gen
