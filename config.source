@@ -2,7 +2,7 @@
 #You will access the Traefik UI at traefik.<your domain>, 
 #  e.g. traefik.example.com 
 #Please make sure that your DNS records point traefik.<your domain> 
-export TRAEFIKDOMAIN=easypro.easyiot.link
+export TRAEFIKDOMAIN=metric.easyiot.link
 
 #Set your email to be used for the generation of Let's Encrypt certificates
 export EMAIL=khgoh99@gmail.com
