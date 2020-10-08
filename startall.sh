@@ -1,2 +1,2 @@
 #!/bin/bash
-sh traefik2/firsttime.sh
+(cd traefik2 ;sh firsttime.sh)
