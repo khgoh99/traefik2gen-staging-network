@@ -6,7 +6,8 @@ export STACKPATH=../$BASESTACKPATH/$STACKNAME
 ## export any other customize variable below
 ############################################
 
-
+export PGA_EMAIL="khgoh99@gmail.com
+export PGA_PASS="password"
 export PGADMIN_DATA=$DATAPATH/$STACKNAME/data
 
 export CREATE_PATH_LIST="$PGADMIN_DATA"
