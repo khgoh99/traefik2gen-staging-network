@@ -7,9 +7,9 @@ export STACKPATH=../$BASESTACKPATH/$STACKNAME
 ############################################
 
 
+export PGADMIN_DATA=$DATAPATH/$STACKNAME/data
 
-
-export CREATE_PATH_LIST=
+export CREATE_PATH_LIST="$PGADMIN_DATA"
 export CREATE_NETWORK_LIST=
 #file list will be in filename,mode separated by space
 export CREATE_FILE_LIST=
