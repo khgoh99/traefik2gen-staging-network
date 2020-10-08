@@ -1,0 +1,76 @@
+#traefik.toml
+# --------- Static Configuration --------------
+
+[providers.docker]
+  endpoint = "unix:///var/run/docker.sock"
+  swarmMode = true
+  exposedbydefault = false
+  network = "traefik-public"
+  
+[log]
+  level="ERROR"
+  
+[api]
+  dashboard = true
+
+[providers.file]
+  watch = true
+  directory = "/etc/traefik/"
+  
+# Lets Encrypt resolver setting
+[certificatesResolvers.leresolver.acme]
+  email = "khgoh99@gmail.com"
+  storage = "/acme/acme.json"
+  [certificatesResolvers.leresolver.acme.tlsChallenge] 
+
+   
+# Matric Config
+#[metrics]
+#  [metrics.prometheus]
+#    buckets = [0.1,0.3,1.2,5.0]
+#    entryPoint = "metrics"
+#    addEntryPointsLabels = true
+  
+     
+     
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+  [entryPoints.websecure]
+    address = ":443"    
+  [entryPoints.webapps]
+    address = ":8443"    
+#  [entryPoints.jms]
+#    address = ":27888"
+#  [entryPoints.jmsdaikin]
+#    address = ":27889"
+  [entryPoints.webjustiotest]
+    address = ":28808"
+
+# --------- Dynamic Configuration --------------
+      
+[http.routers]
+  # HTTP catchall router, matches all HTTP traffic and applies the httpsredirect middleware 
+  [http.routers.https-only]
+    entryPoints = ["web"]
+    middlewares = ["httpsredirect"]
+    rule = "HostRegexp(`{host:.+}`)"
+    # Dummy, only here so the router is valid, is never actually used
+    service = "noop"
+
+[http.services]
+  # noop service, the URL will be never called
+  [http.services.noop.loadBalancer]
+    [[http.services.noop.loadBalancer.servers]]
+      url = "http://127.0.0.1"
+
+[http.middlewares]
+  # Redirect to https traffic
+  [http.middlewares.httpsredirect.redirectScheme]
+    scheme = "https"
+    
+  # Used for SSO
+  #[http.middlewares.sso.forwardAuth]
+  #  address = "http://traefik-fa:4181"
+  #  trustForwardHeader = true
+  #  authResponseHeaders = ["X-Forwarded-User"]
