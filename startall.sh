@@ -1,4 +1,5 @@
 #!/bin/bash
+source config.source
 for module in $MODULELIST
 do
     echo $module
