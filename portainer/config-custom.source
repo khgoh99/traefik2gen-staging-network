@@ -9,7 +9,9 @@ export STACKPATH=../$BASESTACKPATH/$STACKNAME
 export PORTAINER_DATA=$DATAPATH/$STACKNAME/data
 export PORTAINER_NET_AGENT="agent-network"
 
-export CREATE_PATH_LIST=$PORTAINER_DATA
+export PORTAINER_DOMAIN=$TRAEFIKDOMAIN
+
+export CREATE_PATH_LIST="$PORTAINER_DATA,nobody:nogroup"
 export CREATE_NETWORK_LIST=$PORTAINER_NET_AGENT
 
 #file list will be in filename,mode separated by space

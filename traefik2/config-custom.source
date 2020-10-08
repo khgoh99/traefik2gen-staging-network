@@ -10,7 +10,7 @@ export TRAEFIK_SETTING=$DATAPATH/$STACKNAME/setting
 export TRAEFIK_LOGS=$DATAPATH/$STACKNAME/logs
 export TRAEFIK_CONFIG=${MYPATH}/config
 
-export CREATE_PATH_LIST="$TRAEFIK_SETTING $TRAEFIK_LOGS"
+export CREATE_PATH_LIST="$TRAEFIK_SETTING,nobody:nogroup $TRAEFIK_LOGS,nobody:nogroup"
 export CREATE_NETWORK_LIST=$TRAEFIK_NETWORK
 #file list will be in filename,mode separated by space
 export CREATE_FILE_LIST="$TRAEFIK_SETTING/acme.json,600"

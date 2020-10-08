@@ -9,8 +9,9 @@ export STACKPATH=../$BASESTACKPATH/$STACKNAME
 export PGA_EMAIL=khgoh99@gmail.com
 export PGA_PASS=password
 export PGADMIN_DATA=$DATAPATH/$STACKNAME/data
+export PGADMIN_DOMAIN=$TRAEFIKDOMAIN
 
-export CREATE_PATH_LIST="$PGADMIN_DATA"
+export CREATE_PATH_LIST="$PGADMIN_DATA,5050:5050"
 export CREATE_NETWORK_LIST=
 #file list will be in filename,mode separated by space
 export CREATE_FILE_LIST=
