@@ -12,10 +12,10 @@ else
 fi
 
 echo "Creating the directory"
-mkdir -p $DATAPATH/traefik/setting
-mkdir -p $DATAPATH/traefik/log
-touch $DATAPATH/traefik/setting/acme.json
-chmod 600 $DATAPATH/traefik/setting/acme.json
+mkdir -p $DATAPATH/$STACKNAME/setting
+mkdir -p $DATAPATH/$STACKNAME/log
+touch $DATAPATH/$STACKNAME/setting/acme.json
+chmod 600 $DATAPATH/$STACKNAME/setting/acme.json
 
 chown -R nobody:nogroup $DATAPATH
 
