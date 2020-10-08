@@ -5,3 +5,10 @@ export STACKPATH=../$BASESTACKPATH/$STACKNAME
 ############################################
 ## export any other customize variable below
 ############################################
+
+export POSTGRESQL_DBDATA=$DATAPATH/$STACKNAME/dbdata
+
+export CREATE_PATH_LIST="$POSTGRESQL_DBDATA"
+export CREATE_NETWORK_LIST="dbsnet"
+#file list will be in filename,mode separated by space
+export CREATE_FILE_LIST=
