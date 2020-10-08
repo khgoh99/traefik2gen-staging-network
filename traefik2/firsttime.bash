@@ -1,15 +1,23 @@
 #!/bin/bash 
 source ../config.source
 source config-custom.source
+source ../$BASESTACKPATH/script/func.bash
 
-echo "Creating the directory"
-mkdir -p $TRAEFIK_SETTING
-mkdir -p $TRAEFIK_LOGS
-touch $TRAEFIK_SETTING/acme.json
-chmod 600 $TRAEFIK_SETTING/acme.json
+if [ -n "$CREATE_PATH_LIST" ]; then
+	FUNCVAR_LIST=$CREATE_PATH_LIST
+	Create_Directory
+fi
+
+if [ -n "$CREATE_FILE_LIST" ]; then
+	FUNCVAR_LIST=$CREATE_FILE_LIST
+	Create_File
+fi
 
 chown -R nobody:nogroup $DATAPATH
 
 #creating the overlay network
-docker network create --driver=overlay traefik-public
-docker network create --driver=overlay agent-network
+if [ -n "$CREATE_NETWORK_LIST" ]; then
+	FUNCVAR_LIST=$CREATE_NETWORK_LIST
+	Create_Overlay_Network
+fi
+

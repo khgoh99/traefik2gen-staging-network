@@ -1,13 +1,10 @@
 #!/bin/bash
 source config.source
+source $BASESTACKPATH/script/func.bash
 
 printf "\n"
-if [[ $TRAEFIKDOMAIN == "" ]];
-then
-        echo "********** TRAEFIKDOMAIN in config.source not set yet."
-        echo "********** Please setup config.source first"
-	exit 1 
-fi
+
+Check_Domain
 
 printf "********** Traefik Domain: $TRAEFIKDOMAIN \n"
 printf "********** Doing first time configuration \n\n"

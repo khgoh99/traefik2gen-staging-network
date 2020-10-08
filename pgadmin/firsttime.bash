@@ -1,24 +1,23 @@
 #!/bin/bash 
 source ../config.source
 source config-custom.source
+source ../$BASESTACKPATH/script/func.bash
 
-if [[ $TRAEFIKDOMAIN == "" ]];
-then
-        echo "**** TRAEFIKDOMAIN in config.source not set yet."
-	      echo "**** Please setup config.source first"
-	exit 1 
-else
-        echo "Domain is at $TRAEFIKDOMAIN"
+if [ -n "$CREATE_PATH_LIST" ]; then
+	FUNCVAR_LIST=$CREATE_PATH_LIST
+	Create_Directory
 fi
 
-echo "Creating the directory"
-mkdir -p $DATAPATH/$STACKNAME/setting
-mkdir -p $DATAPATH/$STACKNAME/log
-touch $DATAPATH/$STACKNAME/setting/acme.json
-chmod 600 $DATAPATH/$STACKNAME/setting/acme.json
+if [ -n "$CREATE_FILE_LIST" ]; then
+	FUNCVAR_LIST=$CREATE_FILE_LIST
+	Create_File
+fi
 
 chown -R nobody:nogroup $DATAPATH
 
 #creating the overlay network
-docker network create --driver=overlay traefik-public
-docker network create --driver=overlay agent-network
+if [ -n "$CREATE_NETWORK_LIST" ]; then
+	FUNCVAR_LIST=$CREATE_NETWORK_LIST
+	Create_Overlay_Network
+fi
+

@@ -5,3 +5,13 @@ export STACKPATH=../$BASESTACKPATH/$STACKNAME
 ############################################
 ## export any other customize variable below
 ############################################
+
+export PORTAINER_DATA=$DATAPATH/$STACKNAME/data
+export PORTAINER_NET_AGENT="agent-network"
+
+export CREATE_PATH_LIST=$PORTAINER_DATA
+export CREATE_NETWORK_LIST=$PORTAINER_NET_AGENT
+
+#file list will be in filename,mode separated by space
+export CREATE_FILE_LIST=
+

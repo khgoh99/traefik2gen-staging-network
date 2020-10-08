@@ -22,3 +22,4 @@ export MODULELIST="traefik2 portainer"
 export HASHED_PASSWORD=$(openssl passwd -apr1 $PASSWORD)
 export DATAPATH=$SYSTEMROOT/$TRAEFIKDOMAIN
 export BASESTACKPATH=../traefik2gen
+export TRAEFIK_NETWORK="traefik-public"
