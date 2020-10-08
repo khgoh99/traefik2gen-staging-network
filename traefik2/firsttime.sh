@@ -2,15 +2,6 @@
 source ../config.source
 source config-custom.source
 
-if [[ $TRAEFIKDOMAIN == "" ]];
-then
-        echo "**** TRAEFIKDOMAIN in config.source not set yet."
-	      echo "**** Please setup config.source first"
-	exit 1 
-else
-        echo "Domain is at $TRAEFIKDOMAIN"
-fi
-
 echo "Creating the directory"
 mkdir -p $DATAPATH/$STACKNAME/setting
 mkdir -p $DATAPATH/$STACKNAME/log
