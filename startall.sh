@@ -1,1 +1,2 @@
-source traefik2/firsttime.sh
+#!/bin/bash
+sh traefik2/firsttime.sh
