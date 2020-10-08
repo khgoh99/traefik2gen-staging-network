@@ -3,7 +3,7 @@ volumes:
     driver_opts:
        type: none
        o: bind
-       device: "${DATAPATH}/setting"
+       device: "${DATAPATH}/$STACKNAME/setting"
 #      type: nfs
 #      o: "nfsvers=4,addr=nfs1.easypro,rw"
 #      device: ":/${TRAEFIKDOMAIN}/traefik/setting"
@@ -21,7 +21,7 @@ volumes:
     driver_opts:
        type: none
        o: bind
-       device: "${DATAPATH}/logs"
+       device: "${DATAPATH}/$STACKNAME/logs"
 #      type: nfs
 #      o: "nfsvers=4,addr=nfs1.easypro,rw"
 #      device: ":/${TRAEFIKDOMAIN}/traefik/config"
