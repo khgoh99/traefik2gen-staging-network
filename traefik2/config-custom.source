@@ -1,1 +1,2 @@
 export MYPATH=$(pwd)
+export STACKNAME=basename $(pwd)
