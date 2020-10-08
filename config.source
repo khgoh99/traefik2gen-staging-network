@@ -1,0 +1,20 @@
+#Set domain you want to use for the Traefik user interface
+#You will access the Traefik UI at traefik.<your domain>, 
+#  e.g. traefik.example.com 
+#Please make sure that your DNS records point traefik.<your domain> 
+export TRAEFIKDOMAIN=easypro.easyiot.link
+
+#Set your email to be used for the generation of Let's Encrypt certificates
+export EMAIL=khgoh99@gmail.com
+
+#Username and password for the HTTP Basic Auth for Traefik 
+export USERNAME=admin
+export PASSWORD=Elit123!@#
+
+#The root of the share directory
+export SYSTEMROOT=/storage/root
+
+#--------------- Non User Configure Value --------------------------
+#Hash Password
+export HASHED_PASSWORD=$(openssl passwd -apr1 $PASSWORD)
+export DATAPATH=$SYSTEMROOT/$TRAEFIKDOMAIN
