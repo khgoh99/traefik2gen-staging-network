@@ -5,3 +5,7 @@ export STACKPATH=../$BASESTACKPATH/$STACKNAME
 ############################################
 ## export any other customize variable below
 ############################################
+
+export TRAEFIK_SETTING=$DATAPATH/$STACKNAME/setting
+export TRAEFIK_LOGS=$DATAPATH/$STACKNAME/logs
+export TRAEFIK_CONFIG=${MYPATH}/config

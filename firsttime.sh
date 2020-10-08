@@ -1,23 +1,31 @@
 #!/bin/bash
 source config.source
 
+printf "\n"
 if [[ $TRAEFIKDOMAIN == "" ]];
 then
-        echo "**** TRAEFIKDOMAIN in config.source not set yet."
-	      echo "**** Please setup config.source first"
+        echo "********** TRAEFIKDOMAIN in config.source not set yet."
+        echo "********** Please setup config.source first"
 	exit 1 
-else
-        echo "Domain is at $TRAEFIKDOMAIN"
 fi
+
+printf "********** Traefik Domain: $TRAEFIKDOMAIN \n"
+printf "********** Doing first time configuration \n\n"
+
 
 if [ -z "$1" ]
 then
     # Run all the module listed in MODULELIST
+    printf "### Processing all module ###\n" 
     for module in $MODULELIST
     do
-        (cd $module ;bash firsttime.sh)
+        printf "### Module: $module --->\n"
+        (cd $module ;bash firsttime.bash; cd ..)
+	printf "<---\n\n"
     done
 else 
     # Only run the given module
-    (cd $1 ;bash firsttime.sh)
+    printf "### Module: $1 --->\n"
+    (cd $1 ;bash firsttime.bash; cd ..)
+    printf "<---\n\n"
 fi

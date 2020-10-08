@@ -1,9 +1,11 @@
+version: "3.3"
+
 volumes:
   setting:
     driver_opts:
        type: none
        o: bind
-       device: "${DATAPATH}/${STACKNAME}/setting"
+       device: "${TRAEFIK_SETTING}"
 #      type: nfs
 #      o: "nfsvers=4,addr=nfs1.easypro,rw"
 #      device: ":/${TRAEFIKDOMAIN}/{STACKNAME}/setting"
@@ -12,7 +14,7 @@ volumes:
     driver_opts:
        type: none
        o: bind
-       device: "${MYPATH}/config"
+       device: "${TRAEFIK_CONFIG}"
 #      type: nfs
 #      o: "nfsvers=4,addr=nfs1.easypro,rw"
 #      device: ":/${TRAEFIKDOMAIN}/dockerscript/traefik2nfs/base/config"
@@ -21,7 +23,7 @@ volumes:
     driver_opts:
        type: none
        o: bind
-       device: "${DATAPATH}/${STACKNAME}/logs"
+       device: "${TRAEFIK_LOGS}"
 #      type: nfs
 #      o: "nfsvers=4,addr=nfs1.easypro,rw"
 #      device: ":/${TRAEFIKDOMAIN}/{STACKNAME}/config"

@@ -15,7 +15,7 @@ export PASSWORD=Elit123!@#
 export SYSTEMROOT=/storage/root
 
 #Define module need to be up
-export MODULELIST=traefik2 portainer
+export MODULELIST="traefik2 portainer"
 
 #--------------- Non User Configure Value --------------------------
 #Hash Password
