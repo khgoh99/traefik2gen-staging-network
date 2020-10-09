@@ -25,11 +25,11 @@
 
    
 # Matric Config
-#[metrics]
-#  [metrics.prometheus]
-#    buckets = [0.1,0.3,1.2,5.0]
-#    entryPoint = "metrics"
-#    addEntryPointsLabels = true
+[metrics]
+  [metrics.prometheus]
+    buckets = [0.1,0.3,1.2,5.0]
+    entryPoint = "metrics"
+    addEntryPointsLabels = true
   
      
      
