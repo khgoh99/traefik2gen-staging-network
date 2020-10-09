@@ -1,0 +1,17 @@
+export MYPATH=$(pwd)
+export STACKNAME=$(basename $(pwd))
+export STACKPATH=../$BASESTACKPATH/$STACKNAME
+
+############################################
+## export any other customize variable below
+############################################
+
+export PROMETHEUS_DATA=$DATAPATH/$STACKNAME/data
+export PROMETHEUS_CONFIG==$DATAPATH/$STACKNAME/config
+
+export PROMETHEUS_DOMAIN=$TRAEFIKDOMAIN
+
+export CREATE_PATH_LIST="$PROMETHEUS_DATA,996:996 PROMETHEUS_CONFIG,996:996"
+export CREATE_NETWORK_LIST=
+#file list will be in filename,mode separated by space
+export CREATE_FILE_LIST=
