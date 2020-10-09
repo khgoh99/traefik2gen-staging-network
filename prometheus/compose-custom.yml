@@ -12,3 +12,15 @@ volumes:
        type: none
        o: bind
        device: "${PROMETHEUS_CONFIG}"
+
+  prometheus_gfdata:
+    driver_opts:
+       type: none
+       o: bind
+       device: "${PROMETHEUS_GFDATA}"
+       
+  prometheus_gfprovisioning:
+    driver_opts:
+       type: none
+       o: bind
+       device: "${PROMETHEUS_GFPROVISIONING}"       
