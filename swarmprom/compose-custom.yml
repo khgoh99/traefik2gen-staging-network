@@ -1,1 +1,35 @@
 version: "3.3"
+    prometheus: {}
+    grafana: {}
+    alertmanager: {}
+    
+volumes:
+  prometheus:
+    driver_opts:
+       type: none
+       o: bind
+       device: "${SWARMPROM_PROMETHEUS_DATA}"
+
+  config:
+    driver_opts:
+       type: none
+       o: bind
+       device: "${SWARMPROM_PROMETHEUS_CONFIG}"
+
+  grafana:
+    driver_opts:
+       type: none
+       o: bind
+       device: "${SWARMPROM_GRAFANA_DATA}"
+       
+  alertmanager:
+    driver_opts:
+       type: none
+       o: bind
+       device: "${SWARMPROM_ALERTMANAGER_DATA}"      
+       
+  caddy:
+    driver_opts:
+       type: none
+       o: bind
+       device: "${SWARMPROM_CADDY_CONFIG}"         
