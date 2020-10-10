@@ -1,8 +1,4 @@
 version: "3.3"
-    prometheus: {}
-    grafana: {}
-    alertmanager: {}
-    
 volumes:
   prometheus:
     driver_opts:
