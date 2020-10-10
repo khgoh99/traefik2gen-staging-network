@@ -6,9 +6,16 @@ export STACKPATH=../$BASESTACKPATH/$STACKNAME
 ## export any other customize variable below
 ############################################
 
-export WHOAMI_DOMAIN=$TRAEFIKDOMAIN
+export SWARMPROM_PROMETHEUS_DATA=$DATAPATH/$STACKNAME/data
+export SWARMPROM_GRAFANA_DATA=$DATAPATH/$STACKNAME/gfdata
+export SWARMPROM_ALERTMANAGER_DATA=$DATAPATH/$STACKNAME/amgrdata
 
-export CREATE_PATH_LIST=
+export SWARMPROM_PROMETHEUS_CONFIG=$MYPATH/config/prometheus
+export SWARMPROM_CADDY_CONFIG=$MYPATH/config/caddy
+
+export SWARMPROM_DOMAIN=$TRAEFIKDOMAIN
+
+export CREATE_PATH_LIST="$SWARMPROM_PROMETHEUS_DATA,996:996 $SWARMPROM_GRAFANA_DATA,104:104 $SWARMPROM_ALERTMANAGER_DATA,nobody:nogroup"
 export CREATE_NETWORK_LIST=
 #file list will be in filename,mode separated by space
 export CREATE_FILE_LIST=
