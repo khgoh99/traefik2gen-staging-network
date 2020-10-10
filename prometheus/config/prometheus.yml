@@ -41,9 +41,9 @@ scrape_configs:
 
     # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 5s
+#    basic_auth:
+#      username: 'admin'
+#      password: 'Elit123!@#'
+    static_configs:
+         - targets: ['metric.easyiot.link:8082']
 
-    dns_sd_configs:
-    - names:
-      - 'tasks.traefik'
-      type: 'A'
-      port: 8080
