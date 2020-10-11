@@ -23,9 +23,4 @@ volumes:
        type: none
        o: bind
        device: "${SWARMPROM_ALERTMANAGER_DATA}"      
-       
-  node-exporter:
-    driver_opts:
-       type: none
-       o: bind
-       device: "${SWARMPROM_NODEEXPORTER_CONFIG}"         
+              
