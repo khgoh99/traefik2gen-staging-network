@@ -1,5 +1,6 @@
 #!/bin/bash
 source config.source
+source $BASESTACKPATH/script/func.bash
 
 WaitTime=8
 
@@ -23,6 +24,7 @@ then
 	printf "<---\n\n"
     done
     Count_Down $WaitTime
+    printf "\n"
     printf "### Starting all module ###\n" 
     for module in $MODULELIST
     do
@@ -36,6 +38,7 @@ else
     (cd $arg ;bash stop.bash; cd ..)
     printf "<---\n\n"
     Count_Down $WaitTime
+    printf "\n"
     printf "### Module: $arg --->\n"
     (cd $arg ;bash start.bash; cd ..)
     printf "<---\n\n"    
