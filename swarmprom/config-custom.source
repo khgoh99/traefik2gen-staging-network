@@ -1,7 +1,7 @@
 export MYPATH=$(pwd)
 export STACKNAME=$(basename $(pwd))
 export STACKPATH=../$BASESTACKPATH/$STACKNAME
-
+export DOCKER_GWBRIDGE_IP=172.18.0.1
 ############################################
 ## export any other customize variable below
 ############################################
