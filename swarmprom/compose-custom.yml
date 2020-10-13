@@ -35,3 +35,9 @@ volumes:
        type: none
        o: bind
        device: "${SWARMPROM_ALERTMANAGER_CONFIG}"
+
+  caddy:
+    driver_opts:
+       type: none
+       o: bind
+       device: "${SWARMPROM_CADDY_CONFIG}"
