@@ -26,7 +26,14 @@ scrape_configs:
       - 'tasks.dockerd-exporter'
       type: 'A'
       port: 9323
-
+      
+  - job_name: 'traefik'
+    dns_sd_configs:
+    - names:
+      - 'tasks.traefik'
+      type: 'A'
+      port: 8082
+         
   - job_name: 'cadvisor'
     dns_sd_configs:
     - names:
