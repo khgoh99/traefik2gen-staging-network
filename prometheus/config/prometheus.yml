@@ -44,6 +44,10 @@ scrape_configs:
 #    basic_auth:
 #      username: 'admin'
 #      password: 'Elit123!@#'
-    static_configs:
-         - targets: ['metric.easyiot.link:8082']
-
+#    static_configs:
+#         - targets: ['metric.easyiot.link:8082']
+    dns_sd_configs:
+    - names:
+      - 'tasks.traefik'
+      type: 'A'
+      port: 8082
