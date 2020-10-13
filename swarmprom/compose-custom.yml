@@ -18,6 +18,12 @@ volumes:
        o: bind
        device: "${SWARMPROM_GRAFANA_DATA}"
        
+  grafana_config:
+    driver_opts:
+       type: none
+       o: bind
+       device: "${SWARMPROM_GRAFANA_CONFIG}"
+       
   alertmanager:
     driver_opts:
        type: none
