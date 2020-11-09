@@ -1,1 +1,1 @@
-# traefik2gen-metric
+# traefik2gen-easypro-network
