@@ -1,8 +1,12 @@
 #Set domain you want to use for the Traefik user interface
 #You will access the Traefik UI at traefik.<your domain>, 
 #  e.g. traefik.example.com 
+
+#Set system root domain.
+export ROOTDOMAIN=easyiot.link
+
 #Please make sure that your DNS records point traefik.<your domain> 
-export TRAEFIKDOMAIN=metric.easyiot.link
+export TRAEFIKDOMAIN=easypro.${ROOTDOMAIN}
 
 #Set your email to be used for the generation of Let's Encrypt certificates
 export EMAIL=khgoh99@gmail.com
@@ -14,8 +18,11 @@ export PASSWORD=Elit123!@#
 #The root of the share directory
 export SYSTEMROOT=/storage/root
 
+#Get the current director without the dockerscript front portion
+export CURRDIR=${PWD##*dockerscript}
+
 #Define module need to be up
-export MODULELIST="traefik2 portainer postgresql pgadmin whoami"
+export MODULELIST="traefik2 portainer postgresql pgadmin4 smtp"
 
 #--------------- Non User Configure Value --------------------------
 #Hash Password

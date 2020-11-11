@@ -4,9 +4,9 @@ volumes:
   data:
     driver_opts:
        type: none
-       o: bind
-       device: "${DATAPATH}/${STACKNAME}/data"
-#      type: nfs
-#      o: "nfsvers=4,addr=nfs1.easypro,rw"
-#      device: ":/${TRAEFIKDOMAIN}/${STACKNAME}/data"
+#      o: bind
+#      device: "${DATAPATH}/${STACKNAME}/data"
+       type: nfs
+       o: "nfsvers=4,addr=nfs1.easypro,rw"
+       device: ":${PORTAINER_NFS_DATA}"
 

@@ -38,11 +38,13 @@
   [entryPoints.web]
     address = ":80"
   [entryPoints.websecure]
-    address = ":443"    
+    address = ":443"
   [entryPoints.webapps]
     address = ":8443"
   [entryPoints.metrics]
-    address = ":8082"    
+    address = ":8082"
+  [entryPoints.fwupdate]
+    address = ":3000"
 #  [entryPoints.jms]
 #    address = ":27888"
 #  [entryPoints.jmsdaikin]

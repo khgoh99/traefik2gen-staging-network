@@ -4,6 +4,15 @@ source $BASESTACKPATH/script/func.bash
 
 printf "\n"
 
+if [ ! -d "$SYSTEMROOT" ] 
+then
+ printf "Directory SYSTEMROOT $SYSTEMROOT Does Not Exists.\n" 
+ printf "Please make sure this script is execute from the fileserver or NFS hosting the data files if want to create.\n"
+ printf "\n if SYSTEMROOT not available, it will only create the Docker network.\n"
+ printf "\n"
+fi
+
+
 Check_Domain
 
 printf "********** Traefik Domain: $TRAEFIKDOMAIN \n"

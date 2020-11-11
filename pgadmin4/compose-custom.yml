@@ -1,11 +1,11 @@
 version: "3.3"
 
 volumes:
-  dbdata:
+  data:
     driver_opts:
        type: none
 #       o: bind
-#       device: "${POSTGRESQL_DBDATA}"
+#       device: "${PGADMIN_DATA}"
        type: nfs
        o: "nfsvers=4,addr=nfs1.easypro,rw"
-       device: ":${POSTGRESQL_NFS_DBDATA}"
+       device: ":${PGADMIN_NFS_DATA}"

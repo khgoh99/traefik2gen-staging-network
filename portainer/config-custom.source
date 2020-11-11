@@ -1,12 +1,18 @@
 export MYPATH=$(pwd)
 export STACKNAME=$(basename $(pwd))
+
+# Modify path below to point to the base yml file
+# The default is point to the same directory name as the current custome setting directory
 export STACKPATH=../$BASESTACKPATH/$STACKNAME
+export BASESTACKYML=${STACKPATH}/${STACKNAME}.yml
 
 ############################################
 ## export any other customize variable below
 ############################################
 
 export PORTAINER_DATA=$DATAPATH/$STACKNAME/data
+export PORTAINER_NFS_DATA=/$TRAEFIKDOMAIN/$STACKNAME/data
+
 export PORTAINER_NET_AGENT="agent-network"
 
 export PORTAINER_DOMAIN=$TRAEFIKDOMAIN

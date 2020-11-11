@@ -1,16 +1,26 @@
 export MYPATH=$(pwd)
 export STACKNAME=$(basename $(pwd))
+
+# Modify path below to point to the base yml file
+# The default is point to the same directory name as the current custome setting directory
 export STACKPATH=../$BASESTACKPATH/$STACKNAME
+export BASESTACKYML=${STACKPATH}/${STACKNAME}.yml
 
 ############################################
 ## export any other customize variable below
 ############################################
 
-export TRAEFIK_SETTING=$DATAPATH/$STACKNAME/setting
-export TRAEFIK_LOGS=$DATAPATH/$STACKNAME/logs
-export TRAEFIK_CONFIG=${MYPATH}/config
+export TRAEFIK_NFS_SETTING=/$TRAEFIKDOMAIN/$STACKNAME/setting
+export TRAEFIK_NFS_LOGS=/$TRAEFIKDOMAIN/$STACKNAME/logs
+export TRAEFIK_NFS_CONFIG=/$TRAEFIKDOMAIN/dockerscript/${CURRDIR}/${STACKNAME}/config
+
+export TRAEFIK_SETTING=$SYSTEMROOT/$TRAEFIK_NFS_SETTING
+export TRAEFIK_LOGS=$SYSTEMROOT/$TRAEFIK_NFS_LOGS
+export TRAEFIK_CONFIG=${SYSTEMROOT}/config
+
 
 export CREATE_PATH_LIST="$TRAEFIK_SETTING,nobody:nogroup $TRAEFIK_LOGS,nobody:nogroup"
 export CREATE_NETWORK_LIST=$TRAEFIK_NETWORK
+
 #file list will be in filename,mode separated by space
 export CREATE_FILE_LIST="$TRAEFIK_SETTING/acme.json,600"

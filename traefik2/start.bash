@@ -7,4 +7,4 @@ echo "#### Starting/Updating ${STACKNAME}"
 echo "PWD = $PWD"
 echo "docker stack deploy -c ${STACKPATH}/${STACKNAME}.yml -c compose-custom.yml ${STACKNAME}"
 
-docker stack deploy -c ${STACKPATH}/${STACKNAME}.yml -c compose-custom.yml ${STACKNAME}
+docker stack deploy -c ${BASESTACKYML} -c compose-custom.yml ${STACKNAME}
