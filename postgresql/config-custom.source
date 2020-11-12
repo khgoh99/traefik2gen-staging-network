@@ -10,8 +10,10 @@ export BASESTACKYML=${STACKPATH}/${STACKNAME}.yml
 ## export any other customize variable below
 ############################################
 
-export POSTGRESQL_DBDATA=$DATAPATH/pgsql/data
-export POSTGRESQL_NFS_DBDATA=/$TRAEFIKDOMAIN/pgsql/data
+export POSTGRESQL_NFS_DBDATA=/$TRAEFIKDOMAIN/${STACKNAME}/data
+export POSTGRESQL_DBDATA=${SYSTEMROOT}${POSTGRESQL_NFS_DBDATA}
+
+printf "PostgreSql Data directory: ${POSTGRESQL_DBDATA}\n"
 
 export CREATE_PATH_LIST="$POSTGRESQL_DBDATA,999:999"
 export CREATE_NETWORK_LIST="dbsnet"

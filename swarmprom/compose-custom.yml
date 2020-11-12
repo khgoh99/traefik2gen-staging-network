@@ -2,42 +2,54 @@ version: "3.3"
 volumes:
   prometheus:
     driver_opts:
-       type: none
-       o: bind
-       device: "${SWARMPROM_PROMETHEUS_DATA}"
-
+#       type: none
+#       o: bind
+#       device: "${SWARMPROM_PROMETHEUS_DATA}"
+       type: nfs
+       o: "nfsvers=4,addr=nfs1.easypro,rw"
+       device: ":${SWARMPROM_PROMETHEUS_NFS_DATA}"
+       
   config:
     driver_opts:
-       type: none
-       o: bind
-       device: "${SWARMPROM_PROMETHEUS_CONFIG}"
-
+#       type: none
+#       o: bind
+#       device: "${SWARMPROM_PROMETHEUS_CONFIG}"
+       type: nfs
+       o: "nfsvers=4,addr=nfs1.easypro,rw"
+       device: ":${SWARMPROM_PROMETHEUS_NFS_CONFIG}"
+       
   grafana:
     driver_opts:
-       type: none
-       o: bind
-       device: "${SWARMPROM_GRAFANA_DATA}"
+#       type: none
+#       o: bind
+#       device: "${SWARMPROM_GRAFANA_DATA}"
+       type: nfs
+       o: "nfsvers=4,addr=nfs1.easypro,rw"
+       device: ":${SWARMPROM_GRAFANA_NFS_DATA}"
        
   grafana_config:
     driver_opts:
-       type: none
-       o: bind
-       device: "${SWARMPROM_GRAFANA_CONFIG}"
-       
+#       type: none
+#       o: bind
+#       device: "${SWARMPROM_GRAFANA_CONFIG}"
+       type: nfs
+       o: "nfsvers=4,addr=nfs1.easypro,rw"
+       device: ":${SWARMPROM_GRAFANA_NFS_CONFIG}"
+              
   alertmanager:
     driver_opts:
-       type: none
-       o: bind
-       device: "${SWARMPROM_ALERTMANAGER_DATA}"      
-              
+#       type: none
+#       o: bind
+#       device: "${SWARMPROM_ALERTMANAGER_DATA}"      
+       type: nfs
+       o: "nfsvers=4,addr=nfs1.easypro,rw"
+       device: ":${SWARMPROM_ALERTMANAGER_NFS_DATA}"
+                     
   alertmanager_config:
     driver_opts:
-       type: none
-       o: bind
-       device: "${SWARMPROM_ALERTMANAGER_CONFIG}"
-
-  caddy:
-    driver_opts:
-       type: none
-       o: bind
-       device: "${SWARMPROM_CADDY_CONFIG}"
+#       type: none
+#       o: bind
+#       device: "${SWARMPROM_ALERTMANAGER_CONFIG}"
+       type: nfs
+       o: "nfsvers=4,addr=nfs1.easypro,rw"
+       device: ":${SWARMPROM_ALERTMANAGER_NFS_CONFIG}"

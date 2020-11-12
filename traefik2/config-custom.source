@@ -10,14 +10,17 @@ export BASESTACKYML=${STACKPATH}/${STACKNAME}.yml
 ## export any other customize variable below
 ############################################
 
-export TRAEFIK_NFS_SETTING=/$TRAEFIKDOMAIN/$STACKNAME/setting
-export TRAEFIK_NFS_LOGS=/$TRAEFIKDOMAIN/$STACKNAME/logs
-export TRAEFIK_NFS_CONFIG=/$TRAEFIKDOMAIN/dockerscript/${CURRDIR}/${STACKNAME}/config
+export TRAEFIK_NFS_SETTING=/${TRAEFIKDOMAIN}/${STACKNAME}/setting
+export TRAEFIK_NFS_LOGS=/${TRAEFIKDOMAIN}/${STACKNAME}/logs
+export TRAEFIK_NFS_CONFIG=/${TRAEFIKDOMAIN}/dockerscript${CURRDIR}/config
 
-export TRAEFIK_SETTING=$SYSTEMROOT/$TRAEFIK_NFS_SETTING
-export TRAEFIK_LOGS=$SYSTEMROOT/$TRAEFIK_NFS_LOGS
-export TRAEFIK_CONFIG=${SYSTEMROOT}/config
+export TRAEFIK_SETTING=${SYSTEMROOT}${TRAEFIK_NFS_SETTING}
+export TRAEFIK_LOGS=${SYSTEMROOT}${TRAEFIK_NFS_LOGS}
+export TRAEFIK_CONFIG=${SYSTEMROOT}${TRAEFIK_NFS_CONFIG}
 
+printf "Traefik Setting directory: ${TRAEFIK_SETTING}\n"
+printf "Traefik logs directory   : ${TRAEFIK_LOGS}\n"
+printf "Traefik Config directory : ${TRAEFIK_CONFIG}\n"
 
 export CREATE_PATH_LIST="$TRAEFIK_SETTING,nobody:nogroup $TRAEFIK_LOGS,nobody:nogroup"
 export CREATE_NETWORK_LIST=$TRAEFIK_NETWORK

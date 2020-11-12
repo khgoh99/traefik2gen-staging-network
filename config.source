@@ -7,6 +7,7 @@ export ROOTDOMAIN=easyiot.link
 
 #Please make sure that your DNS records point traefik.<your domain> 
 export TRAEFIKDOMAIN=easypro.${ROOTDOMAIN}
+export TRAEFIKDOMAIN=staging.${ROOTDOMAIN}
 
 #Set your email to be used for the generation of Let's Encrypt certificates
 export EMAIL=khgoh99@gmail.com
@@ -22,7 +23,7 @@ export SYSTEMROOT=/storage/root
 export CURRDIR=${PWD##*dockerscript}
 
 #Define module need to be up
-export MODULELIST="traefik2 portainer postgresql pgadmin4 smtp"
+export MODULELIST="traefik2 portainer postgresql pgadmin4 smtp swarmprom whoami"
 
 #--------------- Non User Configure Value --------------------------
 #Hash Password

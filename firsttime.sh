@@ -18,10 +18,13 @@ Check_Domain
 printf "********** Traefik Domain: $TRAEFIKDOMAIN \n"
 printf "********** Doing first time configuration \n\n"
 
-if [ ! -d "$DATAPATH" ]
+if [ -d "$SYSTEMROOT" ]
 then
-	mkdir -p $DATAPATH
-	chown -R nobody:nogroup $DATAPATH
+	if [ ! -d "$DATAPATH" ]
+	then
+		mkdir -p $DATAPATH
+		chown -R nobody:nogroup $DATAPATH
+	fi
 fi
 
 if [ -z "$1" ]

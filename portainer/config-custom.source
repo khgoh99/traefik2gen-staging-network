@@ -9,13 +9,14 @@ export BASESTACKYML=${STACKPATH}/${STACKNAME}.yml
 ############################################
 ## export any other customize variable below
 ############################################
+export PORTAINER_DOMAIN=$TRAEFIKDOMAIN
 
-export PORTAINER_DATA=$DATAPATH/$STACKNAME/data
-export PORTAINER_NFS_DATA=/$TRAEFIKDOMAIN/$STACKNAME/data
+export PORTAINER_NFS_DATA=/${PORTAINER_DOMAIN}/${STACKNAME}/data
+export PORTAINER_DATA=${SYSTEMROOT}${PORTAINER_NFS_DATA}
+
+printf "Portainer Data directory: ${PORTAINER_DATA}\n"
 
 export PORTAINER_NET_AGENT="agent-network"
-
-export PORTAINER_DOMAIN=$TRAEFIKDOMAIN
 
 export CREATE_PATH_LIST="$PORTAINER_DATA,nobody:nogroup"
 export CREATE_NETWORK_LIST=$PORTAINER_NET_AGENT
