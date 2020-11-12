@@ -45,10 +45,6 @@
     address = ":8082"
   [entryPoints.fwupdate]
     address = ":3000"
-#  [entryPoints.jms]
-#    address = ":27888"
-#  [entryPoints.jmsdaikin]
-#    address = ":27889"
   [entryPoints.webjustiotest]
     address = ":28808"
 
