@@ -6,7 +6,7 @@
 export ROOTDOMAIN=easyiot.link
 
 #Please make sure that your DNS records point traefik.<your domain> 
-export TRAEFIKDOMAIN=easypro.${ROOTDOMAIN}
+#export TRAEFIKDOMAIN=easypro.${ROOTDOMAIN}
 export TRAEFIKDOMAIN=staging.${ROOTDOMAIN}
 
 #Set your email to be used for the generation of Let's Encrypt certificates
