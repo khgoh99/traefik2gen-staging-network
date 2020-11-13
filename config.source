@@ -23,7 +23,7 @@ export SYSTEMROOT=/storage/root
 export CURRDIR=${PWD##*dockerscript}
 
 #Define module need to be up
-export MODULELIST="traefik2 portainer postgresql pgadmin4 smtp swarmprom whoami"
+export MODULELIST="traefik2 portainer postgresql pgadmin4 smtp swarmprom"
 
 #--------------- Non User Configure Value --------------------------
 #Hash Password
