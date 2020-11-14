@@ -1,6 +1,3 @@
 #!/bin/bash 
 source ../config.source
-source config-custom.source
-
-echo "#### Stopping ${STACKNAME}"
-docker stack rm ${STACKNAME}
+source $SCRIPTDIR/stop_script.bash

@@ -1,10 +1,8 @@
 #!/bin/bash 
 source ../config.source
-source config-custom.source
+source $SCRIPTDIR/start_script.bash
 
-echo "MYPATH = $MYPATH"
-echo "#### Starting/Updating ${STACKNAME}"
-echo "PWD = $PWD"
-echo "docker stack deploy -c ${STACKPATH}/${STACKNAME}.yml -c compose-custom.yml ${STACKNAME}"
+#source config-custom.source
 
-docker stack deploy -c ${BASESTACKYML} -c compose-custom.yml ${STACKNAME}
+#echo "#### Starting/Updating ${DISTROSTACK}"
+#docker stack deploy -c ${BASESTACKYML} -c compose-custom.yml ${DISTROSTACK}

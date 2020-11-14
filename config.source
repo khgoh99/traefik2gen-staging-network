@@ -19,15 +19,14 @@ export PASSWORD=Elit123!@#
 #The root of the share directory
 export SYSTEMROOT=/storage/root
 
-#Get the current director without the dockerscript front portion
-export CURRDIR=${PWD##*dockerscript}
-
 #Define module need to be up
 export MODULELIST="traefik2 portainer postgresql pgadmin4 smtp swarmprom"
 
+#define the Traefik2gen path
+export BASESTACKPATH=/dockerscript/newConfig/traefik2gen
+
 #--------------- Non User Configure Value --------------------------
-#Hash Password
-export HASHED_PASSWORD=$(openssl passwd -apr1 $PASSWORD)
-export DATAPATH=$SYSTEMROOT/$TRAEFIKDOMAIN
-export BASESTACKPATH=../traefik2gen
-export TRAEFIK_NETWORK="traefik-public"
+
+
+export SCRIPTDIR=${BASESTACKPATH}/script
+source $SCRIPTDIR/config.source.root
