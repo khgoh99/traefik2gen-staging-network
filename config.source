@@ -20,7 +20,7 @@ export PASSWORD=Elit123!@#
 export SYSTEMROOT=/storage/root
 
 #Define module need to be up
-export MODULELIST="traefik2 portainer postgresql pgadmin4 smtp swarmprom"
+export MODULELIST="traefik2 portainer postgresql pgadmin4 smtp"
 
 #define the Traefik2gen path
 export BASESTACKPATH=/dockerscript/newConfig/traefik2gen
