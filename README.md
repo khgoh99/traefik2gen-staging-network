@@ -1,4 +1,5 @@
-# traefik2gen-easypro-network
+# traefik2gen-staging-network
+* For staging server used for testing
 * Configure file: config-source to customize the setting
 * Each subdirectory will consist of a docker stack configuration
 * to Start all the stack in the group
