@@ -1,7 +1,7 @@
 #!/bin/bash 
 source ../config.source
 source config-custom.source
-source ../$BASESTACKPATH/script/func.bash
+source $BASESTACKPATH/script/func.bash
 
 FUNCVAR_LIST="$DATAPATH/$STACKNAME,nobody:nogroup"
 Create_Directory
